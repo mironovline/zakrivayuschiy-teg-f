@@ -4,5 +4,9 @@
     --accent-font: "Press Start 2P", sans-serif;
     --wdth: 100;
     --wght: 400;
-
+    --bg-color: #fff;
+    --main-color: #000;
+    --alt-color: #fff;
+    --contour-color: #000;
+    --animation-fill-color: #ff0000;
 }
