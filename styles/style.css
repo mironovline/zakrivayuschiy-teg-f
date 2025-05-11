@@ -51,7 +51,8 @@
   border: 2px solid #000;
   background-color: #fff;
   block-size: 368px;
-  inline-size: clamp(375px, 100vw, 700px);
+  /* inline-size: clamp(375px, 100vw, 700px); */
+  /* margin-inline: auto 0; */
 }
 
 .header__content {
@@ -336,6 +337,11 @@
 .dialog {
   inline-size: 341px;
 }
+
+.header {
+  block-size: 327px;
+}
+
 }
 
 .card__like-button::before,
