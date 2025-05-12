@@ -1,2 +1,2 @@
-https://github.com/mironovline/zakrivayuschiy-teg-f.git
+https://github.com/mironovline/zakrivayuschiy-teg-f
 https://mironovline.github.io/zakrivayuschiy-teg-f/
