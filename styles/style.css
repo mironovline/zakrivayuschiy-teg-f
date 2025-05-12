@@ -44,11 +44,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #000; 
+  border: 2px solid #000;
   outline: none;
   font-family: var(--accent-font), sans-serif;
   background: var(--bg-color);
-  transition: box-shadow 0.3s ease; 
+  transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -116,7 +116,7 @@
   max-block-size: 700px;
 }
 
-.image__sepia  {
+.image__sepia {
   filter: sepia(80%);
 }
 
@@ -137,11 +137,11 @@
 }
 
 .image__opacity {
-  filter: opacity(0.4);
+  filter: opacity(0.4) sepia(1);
 }
 
-.image__saturate {
-  filter: saturate(390%);
+.image__now {
+  filter: saturate(390%) sepia(1) brightness(200%);
 }
 
 .image {
@@ -158,7 +158,7 @@
   color: #000;
   font-family: var(--accent-font), sans-serif;
   font-weight: 400;
-  font-size: 14px; 
+  font-size: 14px;
   text-transform: uppercase;
   text-shadow: 0 var( --bg-color), 0 1px var( --bg-color), 0 -1px var( --bg-color), 1px 0 var(--bg-color);
   mix-blend-mode: hard-light;
@@ -197,8 +197,7 @@
   block-size: 38px;
 }
 
-.card__icon-button:focus
- {
+.card__icon-button:focus {
   outline: none;
 }
 
