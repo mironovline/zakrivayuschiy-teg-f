@@ -1,12 +1,21 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --main-font: "Inter", sans-serif;
-    --accent-font: "Press Start 2P", sans-serif;
+    --accent-font: "Press Start 2P", 'fantasy';
     --wdth: 100;
     --wght: 400;
     --bg-color: #fff;
     --main-color: #000;
-    --alt-color: #fff;
     --contour-color: #000;
     --animation-fill-color: #ff0000;
+    --margin-block-header: 128px;
+    --image-label-top: 25px;
+    --image-label-right: 25px;
+}
+
+@media (width <= 375px) {
+    :root {
+        --image-label-right: 13px;
+    }
+    
 }
