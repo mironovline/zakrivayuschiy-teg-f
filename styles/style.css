@@ -46,7 +46,7 @@
   align-items: center;
   border: 2px solid #000;
   outline: none;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), 'fantasy';
   background: var(--bg-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
@@ -60,7 +60,7 @@
   align-items: center;
   margin-block: 100px;
   border: 2px solid #000;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), 'fantasy';
   background-color: var(--bg-color);
 }
 
@@ -105,7 +105,7 @@
   padding-block: 3px;
   color: #000;
   font-family: var(--main-font);
-  font-weight: 700;
+  font-variation-settings: 'wght' 700;
   font-size: 18px;
 }
 
@@ -113,7 +113,6 @@
   position: relative;
   border-block-start: none;
   border-block-end: 2px solid #000;
-  max-block-size: 700px;
 }
 
 .image__sepia {
@@ -156,8 +155,8 @@
   right: var(--image-label-right);
   opacity: 0.5;
   color: #000;
-  font-family: var(--accent-font), sans-serif;
-  font-weight: 400;
+  font-family: var(--accent-font), fantasy;
+  
   font-size: 14px;
   text-transform: uppercase;
   text-shadow: 0 var( --bg-color), 0 1px var( --bg-color), 0 -1px var( --bg-color), 1px 0 var(--bg-color);
@@ -213,20 +212,15 @@
 
 .button__text {
   color: var( --bg-color);
-  font-family: var(--accent-font), sans-serif;
-  font-weight: 400;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   font-style: normal;
   line-height: 90%;
   mix-blend-mode: difference;
 }
 
-.card__like-button:focus,
-.card__like-button:focus-visible,
-.button__footer:focus,
-.button__footer:focus-visible,
-.dialog__button:focus,
-.dialog__button:focus-visible {
+.button:focus,
+.button:focus-visible {
   box-shadow: 2px 2px 0 #000;
   outline: none;
 }
@@ -242,7 +236,6 @@
   gap: 8px;
   margin-block-start: 52px;
   color: #000;
-  font-weight: 400;
   font-size: 14px;
   line-height: 90%;
   background: var( --bg-color);
@@ -264,15 +257,13 @@
   padding: 30px;
   overflow: hidden;
   color: #000;
-  font-family: var(--accent-font), sans-serif;
-  font-weight: 400;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   font-style: normal;
   line-height: 150%;
   text-transform: uppercase;
   background-color: var( --bg-color);
   inline-size: clamp(341px, 100vw, 353px);
-  block-size: 191px;
 }
 
 .dialog__button {
@@ -293,19 +284,16 @@
 }
 
 .dialog__content-text {
-  font-family: var(--accent-font), 'fantasy';
+  font-family: var(--accent-font), fantasy;
   line-height: 1.5;
   white-space: normal;
   max-inline-size: 234px;
 }
 
 @media (width <= 375px) {
-  .card__image-label {
-  right: 13px;
-}
 
 .header {
-  block-size: 327px;
+  /* block-size: 327px; */
 }
 
 .button__footer {
