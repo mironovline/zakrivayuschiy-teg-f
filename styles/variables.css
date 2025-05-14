@@ -1,21 +1,32 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --main-font: "Inter", sans-serif;
-    --accent-font: "Press Start 2P", 'fantasy';
+    --accent-font: "Press Start 2P", fantasy;
     --wdth: 100;
     --wght: 400;
     --bg-color: #fff;
     --main-color: #000;
     --contour-color: #000;
     --animation-fill-color: #ff0000;
-    --margin-block-header: 128px;
+    --margin-block-header-content: 128px;
+    --margin-block-header-start: 100px;
+    --margin-block-header-end: 100px;
     --image-label-top: 25px;
     --image-label-right: 25px;
+    --article-header-top: 3px;
+    --article-header-bottom: 3px;
+    --article-header-right: 24px;
+    --article-header-left: 10px;
 }
 
 @media (width <= 375px) {
     :root {
         --image-label-right: 13px;
+        --margin-block-header-content: 120px;
+        --article-header-top: 4px;
+        --article-header-bottom: 6px;
+        --article-header-right: 10px;
+        --margin-block-header-end: 110px;
     }
     
 }

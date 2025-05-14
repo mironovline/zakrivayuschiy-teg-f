@@ -19,7 +19,6 @@
 }
 
 .page {
-  display: grid;
   margin: 0 auto;
   font-family: var(--main-font);
   background-image: 
@@ -31,25 +30,7 @@
   font-variation-settings: 'wdth' var(--wdth), 'wght' var(--wght);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  inline-size: clamp(375px, 100vw, 700px);
-}
-
-.floppy {
-  fill: #fff;
-  mix-blend-mode: difference;
-}
-
-.button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #000;
-  outline: none;
-  font-family: var(--accent-font), 'fantasy';
-  background: var(--bg-color);
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
+  inline-size: clamp(375px, 260.5634px + 30.5164vw, 700px);
 }
 
 /* ------------------------ Шапка ------------------------ */
@@ -58,9 +39,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block: 100px;
+  margin-block-start: var(--margin-block-header-start);
+  margin-block-end: var(--margin-block-header-end);
   border: 2px solid #000;
-  font-family: var(--accent-font), 'fantasy';
+  font-family: var(--accent-font), fantasy;
   background-color: var(--bg-color);
 }
 
@@ -69,7 +51,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-block: var(--margin-block-header);
+  margin-block: var(--margin-block-header-content);
 }
 
 .header__title {
@@ -100,9 +82,10 @@
 
 .article__header {
   border-bottom: 2px solid #000;
-  padding-inline-start: 10px;
-  padding-inline-end: 24px;
-  padding-block: 3px;
+  padding-inline-start: var(--article-header-left);
+  padding-inline-end: var(--article-header-right);
+  padding-block-start: var(--article-header-top);
+  padding-block-end: var(--article-header-bottom);
   color: #000;
   font-family: var(--main-font);
   font-variation-settings: 'wght' 700;
@@ -147,6 +130,9 @@
   display: block;
   object-fit: cover;
   object-position: center;
+  max-width: 100%;
+  height: 100%;
+  
 }
 
 .card__image-label {
@@ -156,7 +142,6 @@
   opacity: 0.5;
   color: #000;
   font-family: var(--accent-font), fantasy;
-  
   font-size: 14px;
   text-transform: uppercase;
   text-shadow: 0 var( --bg-color), 0 1px var( --bg-color), 0 -1px var( --bg-color), 1px 0 var(--bg-color);
@@ -204,6 +189,19 @@
   border-color: #000;
 }
 
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  outline: none;
+  font-family: var(--accent-font), fantasy;
+  background: var(--bg-color);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
 .card__like-button {
   padding-inline: 30px;
   inline-size: 130px;
@@ -230,6 +228,11 @@
   display: flex;
   justify-content: center;
   padding-block-end: 103px;
+}
+
+.floppy {
+  fill: #fff;
+  mix-blend-mode: difference;
 }
 
 .button__footer {
@@ -290,6 +293,22 @@
   max-inline-size: 234px;
 }
 
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: #000;
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
 @media (width <= 375px) {
 
 .header {
@@ -306,113 +325,4 @@
   width: 28px;
   height: 28px;
 }
-
-}
-
-.card__like-button::before,
-.button__footer::before,
-.dialog__button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 0%;
-  height: 100%;
-  background: #000;
-  transition: width 0.5s ease-in-out;
-}
-
-.card__like-button:hover::before,
-.button__footer:hover::before,
-.dialog__button:hover::before {
-  width: 100%;
-}
-/* ---------------------------------- Сердце _______________________________________ */
-
-.sparks {
-  opacity: 0;
-  fill: var(--animation-fill-color);
-}
-
-.like-icon:hover .core {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon .core {
-  fill: var(--bg-color);
-  transition: fill 0.3s linear 0.03s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--contour-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon .main-body {
-  fill: var(--bg-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s linear 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  transform-origin: center;
-  animation: scale 0.3s ease-in 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparkling 0.3s ease-in 0.3s;
-}
-
-.like-icon .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
-}
-
-@keyframes sparkling {
-  from {
-     opacity: 0;
-    }
-    
-
-  to {
-      opacity: 1;
-  }
-
-}
-
-@keyframes scale {
-  from {
-    scale: 1;
-  }
-
-  to {
-    scale: 1.25;
-  }
-
 }
